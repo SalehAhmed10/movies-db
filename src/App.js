@@ -28,6 +28,11 @@ const App = () => {
       <div className="search">
         <input
           value={searchTerm}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              searchMovies(searchTerm);
+            }
+          }}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search for movies"
         />
